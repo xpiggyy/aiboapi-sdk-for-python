@@ -17,5 +17,5 @@ class Aibo:
         Returns:
             str: _description_
         """
-        
+
         self.function.get_result_on_completion(API_NAME, arguments)

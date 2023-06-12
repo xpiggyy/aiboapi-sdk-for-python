@@ -14,7 +14,9 @@ class Functions:
         response = requests.get(
             "https://public.api.aibo.com/v1/devices", headers=self.headers
         )
-        assert response.status_code == requests.codes.ok, sys.exit('SyntaxError: invalid token!')
+        assert response.status_code == requests.codes.ok, sys.exit(
+            "SyntaxError: invalid token!"
+        )
         response_text = json.loads(response.text)
         self.device_Id = response_text["devices"][0]["deviceId"]
 
@@ -52,7 +54,10 @@ class Functions:
             send_request_response = self.send_request(API_NAME, arguments)
             send_request_execution_Id = send_request_response["execution_Id"]
             send_request_status = send_request_response["status"]
-            if send_request_status == 'ACCEPTED' or send_request_status == 'IN_PROGRESS':
+            if (
+                send_request_status == "ACCEPTED"
+                or send_request_status == "IN_PROGRESS"
+            ):
                 time.sleep(3)
                 break
             else:
@@ -66,4 +71,4 @@ class Functions:
             else:
                 time.sleep(1.5)
                 return False
-        return send_get_request_response['result']
+        return send_get_request_response["result"]
