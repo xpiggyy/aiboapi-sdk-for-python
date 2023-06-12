@@ -1,0 +1,1 @@
+from aibo.main import Aibo
