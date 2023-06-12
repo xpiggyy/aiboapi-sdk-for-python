@@ -2,7 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-aiboapi は、AIBO API にリクエストを送信するための Python 3 ライブラリです。 認証に aibo の access_token を使用して aibo web api クライアントのリクエストをエミュレートします。
+aiboapi は、AIBO API にリクエストを送信するための Python 3 ライブラリです。 認証に aibo の access_token を使用して aibo web api クライアントのリクエストをエミュレートします。<br>
+※eventidによるapiリクエストも必要であれば実装します
 
 # Install package
 
