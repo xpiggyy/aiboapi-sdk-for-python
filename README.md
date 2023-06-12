@@ -56,8 +56,6 @@ Action API は arguments が必要です。<br>
 
 ---
 
-<br>
-
 ### Cognition API
 
 Cognition API は arguments が不必要です。<br>
