@@ -33,7 +33,7 @@ Action API は arguments が必要です。<br>
 | approach_object     | Yes                | 指定されたものに近づきます。                                                                                   |
 | approach_person     | Yes                | 人に指定された距離まで近づきます。                                                                             |
 | change_posture      | Yes                | 指定された姿勢をとります。すでにその姿勢のときは、何もせずに終了します。                                       |
-| chase_object        | Yes                | 指定されたものを見続けます。\n                                                                                 |
+| chase_object        | Yes                | 指定されたものを見続けます。                                                                                 |
 | chase_person        | Yes                | 人を見続けます。                                                                                               |
 | explore             | Yes                | 指定された時間歩き回ります。                                                                                   |
 | find_object         | Yes                | 指定されたものを探します。                                                                                     |
