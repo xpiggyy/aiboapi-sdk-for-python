@@ -63,6 +63,7 @@ class Functions:
             else:
                 time.sleep(1.5)
                 return False
+        time.sleep(3)
         while True:
             send_get_request_response = self.send_get_request(send_request_execution_Id)
             send_get_request_status = send_get_request_response["status"]
