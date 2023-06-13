@@ -16,7 +16,7 @@ $ pip install git+https://github.com/xpiggyy/aiboapi-sdk-for-python
 ```py
 from aiboapi import Aibo
 
-token = 'xxxxxxx'
+token = 'token is here!!'
 a = Aibo(token)
 
 a.get_devices()
