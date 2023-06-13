@@ -19,6 +19,13 @@ class Functions:
         )
         response_text = json.loads(response.text)
         self.device_Id = response_text["devices"][0]["deviceId"]
+        self.nickname = response.text["devices"][0]["nickname"]
+
+    def get_devices(self) -> str:
+        return self.device_id
+
+    def get_nickname(self) -> str:
+        return self.nickname
 
     def send_request(self, API_NAME: str, arguments: Dict = None) -> Dict:
         headers = self.headers
