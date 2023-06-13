@@ -1,4 +1,4 @@
-from aibo.functions.fetch import Functions
+from aiboapi.functions.fetch import Functions
 from typing import Dict
 
 
