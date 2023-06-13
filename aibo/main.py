@@ -7,7 +7,7 @@ class Aibo:
         self.token = token
         self.function = Functions(token)
 
-    def aibo_control(self, API_NAME: str, arguments: Dict = None) -> Dict:
+    def control(self, API_NAME: str, arguments: Dict = None) -> Dict:
         """Main method for controlling aibo!!
 
         Args:
