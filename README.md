@@ -8,7 +8,7 @@ aiboapi は、AIBO API にリクエストを送信するための Python 3 ラ�
 # Install package
 
 ```sh
-$ pip install git+https://github.com/xpiggyy/aiboabi-sdk-for-python
+$ pip install git+https://github.com/xpiggyy/aiboapi-sdk-for-python
 ```
 
 # Usage
