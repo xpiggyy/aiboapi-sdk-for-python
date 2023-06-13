@@ -17,7 +17,7 @@ class Aibo:
         """Main method for controlling aibo!!
 
         Args:
-            API_NAME: aibo_control(API_NAME = "xxxxxx")
+            API_NAME: ask_action(API_NAME = "xxxxxx")
             arguments (str, optional): _description_. Defaults to None.
 
         Returns:
