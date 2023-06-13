@@ -17,9 +17,20 @@ $ pip install git+https://github.com/xpiggyy/aiboabi-sdk-for-python
 from aibo import Aibo
 
 token = 'xxxxxxx'
-aibo = Aibo(token)
-aibo.control(API_NAME: str, arguments: Dict)
+a = Aibo(token)
+
+a.get_devices()
+a.get_nickname()
+
+a.ask_action(API_NAME: str, arguments: Dict)
 ```
+
+# Methods
+| Method            |   Parameters |   Description | 
+| ------------------- | ------------------ | ------------------ |
+|   get_devices    |    None    |    deviceIdを取得します。 |
+|   get_nickname   |    None    |    nicknameを取得します。|
+|   ask_action  |   API_NAME: str, arguments: Dict = None  |   aiboに行動を指示します。|
 
 # API_NAME List
 
