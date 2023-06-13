@@ -18,7 +18,7 @@ from aibo import Aibo
 
 token = 'xxxxxxx'
 aibo = Aibo(token)
-aibo.aibo_control(API_NAME: str, arguments: Dict)
+aibo.control(API_NAME: str, arguments: Dict)
 ```
 
 # API_NAME List
