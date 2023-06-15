@@ -8,7 +8,8 @@ class Aibo:
         self.function = Functions(token)
 
     def get_devices(self) -> str:
-        self.function.get_devices()
+        device_id = self.function.get_devices()
+        return device_id
 
     def ask_action(self, API_NAME: str, arguments: Dict = None) -> Dict:
         """Main method for controlling aibo!!
@@ -21,4 +22,5 @@ class Aibo:
             str: _description_
         """
 
-        self.function.get_result_on_completion(API_NAME, arguments)
+        result = self.function.get_result_on_completion(API_NAME, arguments)
+        return result
