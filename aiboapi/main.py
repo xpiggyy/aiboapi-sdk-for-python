@@ -57,6 +57,7 @@ class Aibo:
 
     def ask_action(self, API_NAME: str, arguments: str = '{}') -> Dict:
         while True:
+            print('send_request')
             send_request_response = self.send_request(API_NAME, arguments)
             send_request_execution_Id = send_request_response["execution_Id"]
             send_request_status = send_request_response["status"]
@@ -64,16 +65,21 @@ class Aibo:
                 send_request_status == "ACCEPTED"
                 or send_request_status == "IN_PROGRESS"
             ):
+                print(send_request_status)
+                print('send_request : break')
                 break
             else:
+                print('send_request')
                 time.sleep(1.5)
         time.sleep(2)
         while True:
+            print('send_get_request')
             send_get_request_response = self.send_get_request(send_request_execution_Id)
             send_get_request_status = send_get_request_response["status"]
             if send_get_request_status == "SUCCEEDED":
                 return send_get_request_response["result"]
             else:
                 time.sleep(1.5)
+                print('send_get_request')
 
 
