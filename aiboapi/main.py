@@ -57,7 +57,7 @@ class Aibo:
 
     def ask_action(self, API_NAME: str, arguments: str = '{}') -> Dict:
         while True:
-            print('send_request')
+            print('send_request......')
             send_request_response = self.send_request(API_NAME, arguments)
             send_request_execution_Id = send_request_response["execution_Id"]
             send_request_status = send_request_response["status"]
@@ -71,8 +71,7 @@ class Aibo:
             else:
                 print('send_request')
                 time.sleep(1.5)
-        time.sleep(2)
-        print('send_get_request')
+        print('send_get_request.....')
         while True:
             send_get_request_response = self.send_get_request(send_request_execution_Id)
             send_get_request_status = send_get_request_response["status"]
@@ -80,6 +79,14 @@ class Aibo:
                 return send_get_request_response["result"]
             else:
                 time.sleep(2.5)
-                print(send_get_request_status)
+                print('send_get_request.....')
 
 
+token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjExMSJ9.eyJzdWIiOiIxMTg3MGFmNS00MGI1LTRkNDAtOTM5MC0xN2NlYTA2ZjQ1ZDgiLCJleHAiOjE2ODY4ODg5OTEsImlzcyI6Imh0dHBzOi8vcHVibGljLmFwaS5haWJvLmNvbSIsImF1ZCI6IjQ1LjU0NzA2MTA2NzUyMDgxOTIiLCJqdGkiOiIwYjQxOThmNC1jOWRiLTQxMDMtODRjNi00N2E3ODVhMzgwNjkiLCJpYXQiOjE2ODY4MDI1OTF9.ffJP_nxdB3sm6nAD4ENw8gw1fqsiU2n6fNYXmP3QrCXc3I3y7mMB70Rw3TXL_nuwcRdbgtxjXlE8F9J-k_-szNtYS5x-HlGGoB2tIGTqZzR8FBJc6EJU8pAPYq8-2pqbxKezkgPF5gsbheRroqqAO9clugozqxT7BPElmVXEDAR84mdtiCIzH0E-2Zb-N0GNJQuIi1jFAFzE4ZNF0JdCnYF0xcUJWqOl81QepK4ShtRcucPig1w8LEbp-IIQTLgZ1oqz8i0eDKEg3wl_4hRFBnCRXDfrC65FA26eAqlOVtadXVD1qjQt7wELVXH3o26Zfo3IFm3b40fQLPMfIzYX4g'
+a = Aibo(token)
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
+print(a.ask_action(API_NAME='play_motion',arguments='{"arguments":{"Category":"bark","Mode":"NONE"}}'))
