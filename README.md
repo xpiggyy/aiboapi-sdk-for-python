@@ -29,7 +29,6 @@ a.ask_action(API_NAME: str, arguments: Dict)
 | Method            |   Parameters |   Description | 
 | ------------------- | ------------------ | ------------------ |
 |   get_devices    |    None    |    deviceIdを取得します。 |
-|   get_nickname   |    None    |    nicknameを取得します。|
 |   ask_action  |   API_NAME: str, arguments: Dict = None  |   aiboに行動を指示します。|
 
 # API_NAME List
