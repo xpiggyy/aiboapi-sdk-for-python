@@ -1,11 +1,8 @@
 import requests
-from typing import Dict
 import json
+from typing import Dict
 import time
 import sys
-
-
-#test file
 
 class Functions:
     def __init__(self, token) -> None:
@@ -26,7 +23,7 @@ class Functions:
         device_id = self.device_Id
         return device_id
 
-    def send_request(self, API_NAME: str, arguments: Dict = None) -> Dict:
+    def send_request(self, API_NAME: str, arguments) -> Dict:
         headers = self.headers
         endpoint = (
             "https://public.api.aibo.com/v1/devices/"
@@ -35,10 +32,8 @@ class Functions:
             + API_NAME
             + "/execute"
         )
-        if arguments:
-            data = '{"arguments":' + arguments + "}"
-        else:
-            data = "{}"
+        data = arguments
+        print(data)
         response = requests.post(endpoint, headers=headers, data=data)
         response_text = json.loads(response.text)
         execution_Id = response_text["executionId"]
@@ -59,8 +54,9 @@ class Functions:
             "result": result,
         }
 
-    def get_result_on_completion(self, API_NAME: str, arguments: Dict = None) -> Dict:
+    def ask_action(self, API_NAME: str, arguments: str = '{}') -> Dict:
         while True:
+            print('send_request......')
             send_request_response = self.send_request(API_NAME, arguments)
             send_request_execution_Id = send_request_response["execution_Id"]
             send_request_status = send_request_response["status"]
@@ -68,18 +64,17 @@ class Functions:
                 send_request_status == "ACCEPTED"
                 or send_request_status == "IN_PROGRESS"
             ):
-                time.sleep(3)
+                print(send_request_status)
                 break
             else:
                 time.sleep(1.5)
-                return False
-        time.sleep(3)
+                print('.')
+        print('get_request.....')
         while True:
             send_get_request_response = self.send_get_request(send_request_execution_Id)
             send_get_request_status = send_get_request_response["status"]
             if send_get_request_status == "SUCCEEDED":
-                break
+                return send_get_request_response["result"]
             else:
-                time.sleep(1.5)
-                return False
-        return send_get_request_response["result"]
+                time.sleep(2.5)
+                print('.')

@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name="aiboapi",
-    version="1.0.6",
+    version="1.0.7",
     description="AIBO API SDK for python",
-    author="Team 5 belonging to is17",
+    author="Team 5",
     project_urls={
         "Documentation": "https://github.com/xpiggyy/aiboapi-sdk-for-python/blob/main/README.md",
         "Source": "https://github.com/xpiggyy/aiboapi-sdk-for-python",
