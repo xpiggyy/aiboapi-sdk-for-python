@@ -74,7 +74,6 @@ class Aibo:
             if send_get_request_status == "SUCCEEDED":
                 return send_get_request_response["result"]
             else:
-                print("else")
                 time.sleep(1.5)
 
 
