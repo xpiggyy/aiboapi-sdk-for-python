@@ -80,6 +80,6 @@ class Aibo:
                 return send_get_request_response["result"]
             else:
                 time.sleep(1.5)
-                print('send_get_request')
+                print(send_get_request_status)
 
 
