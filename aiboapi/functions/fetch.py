@@ -5,6 +5,8 @@ import time
 import sys
 
 
+#test file
+
 class Functions:
     def __init__(self, token) -> None:
         self.headers = {
@@ -26,10 +28,9 @@ class Functions:
 
     def send_request(self, API_NAME: str, arguments: Dict = None) -> Dict:
         headers = self.headers
-        device_Id = self.device_id
         endpoint = (
             "https://public.api.aibo.com/v1/devices/"
-            + device_Id
+            + self.device_Id
             + "/capabilities/"
             + API_NAME
             + "/execute"
@@ -50,8 +51,13 @@ class Functions:
         response = requests.get(endpoint, headers=headers)
         response_text = json.loads(response.text)
         new_execution_Id = response_text["executionId"]
-        status = response_text["status"]
-        return {"status": status, "execution_Id": new_execution_Id}
+        new_status = response_text["status"]
+        result = response_text["result"]
+        return {
+            "status": new_status,
+            "execution_Id": new_execution_Id,
+            "result": result,
+        }
 
     def get_result_on_completion(self, API_NAME: str, arguments: Dict = None) -> Dict:
         while True:
