@@ -14,7 +14,7 @@ class Functions:
             "https://public.api.aibo.com/v1/devices", headers=self.headers
         )
         assert response.status_code == requests.codes.ok, sys.exit(
-            "SyntaxError: invalid token!"
+            "Error: invalid token!"
         )
         response_text = json.loads(response.text)
         self.device_Id = response_text["devices"][0]["deviceId"]
