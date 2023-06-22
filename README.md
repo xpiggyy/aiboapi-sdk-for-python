@@ -22,7 +22,7 @@ a = Aibo(token)
 a.get_devices()
 a.get_nickname()
 
-a.ask_action(API_NAME: str, arguments: Dict)
+a.ask_action(API_NAME: str, arguments: str)
 ```
 
 # Methods
