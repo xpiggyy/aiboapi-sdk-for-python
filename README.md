@@ -29,7 +29,7 @@ a.ask_action(API_NAME: str, arguments: Dict)
 | Method            |   Parameters |   Description | 
 | ------------------- | ------------------ | ------------------ |
 |   get_devices    |    None    |    deviceIdを取得します。 |
-|   ask_action  |   API_NAME: str, arguments: Dict = None  |   aiboに行動を指示します。|
+|   ask_action  |   API_NAME: str, arguments: str = None  |   aiboに行動を指示します。|
 
 # API_NAME List
 
