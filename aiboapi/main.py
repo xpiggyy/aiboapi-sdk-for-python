@@ -39,7 +39,6 @@ class Aibo:
             + "/execute"
         )
         data = arguments
-        print(data)
         response = requests.post(endpoint, headers=headers, data=data)
         response_text = json.loads(response.text)
         execution_Id = response_text["executionId"]
@@ -61,8 +60,8 @@ class Aibo:
         }
 
     def ask_action(self, API_NAME: str, arguments: str = '{}') -> Dict:
+        print(f'{API_NAME} : send request......')
         while True:
-            print('send_request......')
             send_request_response = self.send_request(API_NAME, arguments)
             send_request_execution_Id = send_request_response["execution_Id"]
             send_request_status = send_request_response["status"]
@@ -71,17 +70,16 @@ class Aibo:
                 or send_request_status == "IN_PROGRESS"
             ):
                 print(send_request_status)
-                print('send_requested!!')
+                print('done!')
                 break
             else:
-                print('send_request')
                 time.sleep(1.5)
-        print('send_get_request.....')
+        print(f'{API_NAME} : get result......')
         while True:
             send_get_request_response = self.send_get_request(send_request_execution_Id)
             send_get_request_status = send_get_request_response["status"]
             if send_get_request_status == "SUCCEEDED":
+                print('done!')
                 return send_get_request_response["result"]
             else:
                 time.sleep(2.5)
-                print('send_get_request.....')
